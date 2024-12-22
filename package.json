@@ -1,0 +1,29 @@
+{
+  "name": "bk-api",
+  "version": "0.1.0",
+  "description": "REST API for personal potrfolio website, to be used by both backoffice and website",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./src/app.ts",
+    "dev": "concurrently \"tsc --watch\" \"nodemon src/app.ts\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bojan Knezevic",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
