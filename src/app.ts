@@ -1,7 +1,9 @@
 import express, { Application } from 'express';
 import usersRouter from './routes/users';
+import authRouter from './routes/auth';
 
 import dotenv from 'dotenv';
+import { authenticateToken } from './middleware/auth';
 
 dotenv.config();
 
@@ -12,7 +14,8 @@ const port = 3000;
 app.use(express.json());
 
 // Routes
-app.use('/users', usersRouter);
+app.use('/users', authenticateToken, usersRouter);
+app.use('/auth', authRouter);
 
 app.listen(port, () => {
   console.log(`Server running on: http://localhost:${port}`);
